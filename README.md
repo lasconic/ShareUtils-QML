@@ -1,0 +1,1 @@
+See http://blog.lasconic.com/share-on-ios-and-android-using-qml 
