@@ -40,11 +40,7 @@ void IosShareUtils::share(const QString &text, const QUrl &url) {
     if (url.isValid()) {
         [sharingItems addObject:url.toNSURL()];
     }
-
-    // Get the UIView that backs our QQuickWindow:
-    //UIView *view = static_cast<UIView *>(QGuiApplication::platformNativeInterface()->nativeResourceForWindow("uiview", window()));
-    //keyWindow
-
+    // get the main window rootViewController
     UIViewController *qtController = [[UIApplication sharedApplication].keyWindow rootViewController];
 
     UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:sharingItems applicationActivities:nil];
