@@ -15,7 +15,6 @@ HEADERS += shareutils.h
 ios {
     OBJECTIVE_SOURCES += ios/iosshareutils.mm
     HEADERS += ios/iosshareutils.h
-    QT += gui_private
 }
 
 android {

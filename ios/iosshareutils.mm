@@ -22,7 +22,6 @@
 
 #import "iosshareutils.h"
 #import <UIKit/UIKit.h>
-#import <QtGui/qpa/qplatformnativeinterface.h>
 #import <QGuiApplication>
 #import <QQuickWindow>
 
@@ -43,9 +42,10 @@ void IosShareUtils::share(const QString &text, const QUrl &url) {
     }
 
     // Get the UIView that backs our QQuickWindow:
-    UIView *view = static_cast<UIView *>(QGuiApplication::platformNativeInterface()->nativeResourceForWindow("uiview", window()));
+    //UIView *view = static_cast<UIView *>(QGuiApplication::platformNativeInterface()->nativeResourceForWindow("uiview", window()));
+    //keyWindow
 
-    UIViewController *qtController = [[view window] rootViewController];
+    UIViewController *qtController = [[UIApplication sharedApplication].keyWindow rootViewController];
 
     UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:sharingItems applicationActivities:nil];
     [qtController presentViewController:activityController animated:YES completion:nil];
