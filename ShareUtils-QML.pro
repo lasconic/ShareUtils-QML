@@ -15,6 +15,10 @@ HEADERS += shareutils.h
 ios {
     OBJECTIVE_SOURCES += ios/iosshareutils.mm
     HEADERS += ios/iosshareutils.h
+
+    Q_ENABLE_BITCODE.name = ENABLE_BITCODE
+    Q_ENABLE_BITCODE.value = NO
+    QMAKE_MAC_XCODE_SETTINGS += Q_ENABLE_BITCODE
 }
 
 android {
